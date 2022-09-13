@@ -16,7 +16,7 @@ isInstructor = true;
 // 자료형
 
 let hobbies: string[]; // 문자열 배열 타입
-hobbies = ['cooking', 'sports', 12]; // 12에 오류 발생
+// hobbies = ['cooking', 'sports', 12]; // 12에 오류 발생
 
 // 타입 별칭
 type Person = {
@@ -41,7 +41,7 @@ let people: Person[];
 // 타입 추론 (type inference)
 
 let course = 'react - typescript';
-course = 123; // 오류 발생. 위 선언문에서 string 타입을 받는다고 추론.
+// course = 123; // 오류 발생. 위 선언문에서 string 타입을 받는다고 추론.
 // 직접 타입을 지정하는 것보다는 이렇게 타입 추론을 사용하는 것이 일반적임
 
 // 유니온 유형 - 한 개 이상의 타입을 지정
