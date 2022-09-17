@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
-import classes from './NewTodo.module.css'
+import React, { useRef, useContext } from 'react';
+import { TodosContext } from '../store/todos-context';
+import classes from './NewTodo.module.css';
 
-const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+const NewTodo: React.FC = () => {
   // 함수 반환 타입 : void
   const todoTextInputRef = useRef<HTMLInputElement>(null);
+  const todosCtx = useContext(TodosContext);
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,7 +14,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
       // 입력된 값이 없을 경우
       return;
     }
-    props.onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
 
   return (
